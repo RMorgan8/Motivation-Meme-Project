@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivation Meme</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  </head>
+  <body id="bodycol">
+
+    <!-- Slide bar content -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="container">
+        <label for="headerInput"> Change Main text:</label>
+        <input type="text" onchange="changeheadertext(this)" id="headerInput" class="textInput" placeholder="Header">
+        <label for="maintextInput">Change Subtext:</label>
+        <input type="text" onchange="changemaintext(this)" id="maintextInput" class="textInput" placeholder="Subtext">
+        <label for="backgroundcolor-picker" id="backgroundcolor-pickertext">Change background color:</label>
+        <input id="backgroundcolor-picker" type="color" onchange="changebackgroundcolor(this)" class="colorInput" value="#ffffff">
+        <label for="textcolor-picker" id="textcolor-pickertext">Change text and border color:</label>
+        <input id="textcolor-picker" type="color" onchange="changetextcolor(this)" class="colorInput" value="#ffffff">
+        <label for="file" id="fileLabel">Upload Image</label>
+        <label for="file"><img src="./assets/images/upload.png" alt=""></label>
+        <input type="file" id="file" accept="image/*" name="iamge" style="display: none;" onchange="loadFile(event)">
+        <footer>
+          © 2023 Rohan Morgan.
+        </footer>
+      </div>
+    </div>
+    <!-- Use any element to open the sidenav -->
+    <span onclick="openNav()" ><img src="./assets/images/settings.png" alt=""id="open-bar"></span>
+    
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div id="main">
+      <img src="./assets/images/daenerys.jpeg" alt="" id="memeimage">
+      <h1 class="text" id="header">THAT SPECIAL MOMENT</h1>
+      <p class="text" id="maintext">When you find the perfect avocade at the supermarket</p>
+    </div>
+  </body>
+  <script>
+      /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "25%";
+    }
+
+    /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "25%";
+    }
+
+    function changebackgroundcolor(el) {
+      bodycol.style.backgroundColor = el.value;
+    } 
+
+    function changetextcolor(el) {
+      var cols = document.getElementsByClassName('text');
+      for(i = 0; i < cols.length; i++) {
+      cols[i].style.color = el.value;
+      }   
+      document.getElementById("memeimage").style.borderColor = el.value;
+    } 
+    
+    function changeheadertext(el){
+      document.getElementById("header").innerHTML = el.value;
+    }
+    function changemaintext(el){
+      document.getElementById("maintext").innerHTML = el.value;
+    }
+    function loadFile(event){
+      document.getElementById("memeimage").src = URL.createObjectURL(event.target.files[0]);
+    }
+  </script>
+</html>

@@ -1,0 +1,146 @@
+/* Main page content */
+body{
+    background-color:black;
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+#memeimage{
+    width: 100%;
+    border: 5px solid white;
+}
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+#main {
+    transition: margin-left .5s;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 100px;
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+}
+
+#open-bar{
+    color: white;
+    margin: 0%;
+    padding: 0%;
+    max-width: 25px;
+    max-height: 25px;
+}
+#open-bar.resize {
+
+    height: auto;
+}
+  
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+  
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+  
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* Side bar contnet */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+  label {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    color: antiquewhite;
+}
+.colorInput {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.colorInput::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+.colorInput::-moz-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+#fileLabel{
+    /* margin-top: 50px; */
+    margin-bottom: 0px;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    color: antiquewhite;
+}
+.textInput{
+    width: 75;
+    align-self: center;
+    margin:0px 10px 30px 10px;
+    padding: 10px;
+    border-radius:10px;
+    box-shadow: 2px;
+    font-family: "Poppins", sans-serif;
+}
+input:focus{
+    outline: none;
+}
+footer{
+    padding-top: 20px;
+    padding-bottom: 0px;
+    color: antiquewhite;
+    font-size: small;
+}
+
+
+
+
+
+
+
+
